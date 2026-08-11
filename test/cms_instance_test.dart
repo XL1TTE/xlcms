@@ -5,42 +5,42 @@ import 'package:xlcms/src/contracts/cms_instance.dart';
 void main() {
   group('CMS Instance type tests', () {
     
-    late ICmsInstance cmsInstance;
+    late ICmsInstance cms;
 
     setUp(() {
-      cmsInstance = CmsInstance();
+      cms = CmsInstance();
     });
 
     test('CMS successfully creates a content.', () {
 
-      var content = cmsInstance.createContent();
+      var content = cms.createContent();
 
-      expect(cmsInstance.exist(content), true);
+      expect(cms.exist(content), true);
     });
 
     test('CMS successfully deletes a content.', () {
 
-      var content = cmsInstance.createContent();
-      cmsInstance.deleteContent(content);
+      var content = cms.createContent();
+      cms.deleteContent(content);
 
-      expect(cmsInstance.exist(content), false);
+      expect(cms.exist(content), false);
     });
 
     test('Id is reused and old content treated as not existing.', () {
 
-      var content1 = cmsInstance.createContent();
-      cmsInstance.deleteContent(content1);
-      var content2 = cmsInstance.createContent();
+      var content1 = cms.createContent();
+      cms.deleteContent(content1);
+      var content2 = cms.createContent();
       
-      expect(cmsInstance.exist(content1), false);
-      expect(cmsInstance.exist(content2), true);
+      expect(cms.exist(content1), false);
+      expect(cms.exist(content2), true);
     });
 
-    test('Ids being reused after deletion of conent.', () {
+    test('Ids being reused after deletion of content.', () {
 
-      var content1 = cmsInstance.createContent();
-      cmsInstance.deleteContent(content1);
-      var content2 = cmsInstance.createContent();
+      var content1 = cms.createContent();
+      cms.deleteContent(content1);
+      var content2 = cms.createContent();
 
       expect(content1.id, content2.id);
     });

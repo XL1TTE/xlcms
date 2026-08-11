@@ -9,4 +9,7 @@ final class CmsContent extends Equatable{
 
   @override
   List<Object?> get props => [id, generation];
+
+  @override
+  String toString() => "Content = {id: $id, gen: $generation}";
 } 
