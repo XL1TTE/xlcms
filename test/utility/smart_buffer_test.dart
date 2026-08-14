@@ -44,5 +44,9 @@ void main() {
       expect(buffer.capacity, initialCapacity * 4);
     });
 
+    test('Buffer throws state error when trying to outrich max capacity', () {
+      expect(() => buffer[buffer.maxCapacity] = 21, throwsStateError);
+    });
+
   });
 }

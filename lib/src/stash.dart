@@ -1,12 +1,13 @@
 
 import 'package:xlcms/src/cms_content.dart';
+import 'package:xlcms/src/contracts/stash.dart';
 import 'package:xlcms/src/utility/smart_buffer.dart';
 
-final class Stash<TComponent>{
+final class Stash<TComponent> implements IStash{
   static const int _bufferInitialLenght = 32;
 
   final SmartBuffer<TComponent?> _components = SmartBuffer(_bufferInitialLenght);
-
+  
   int get size => _components.length;
   bool get isEmpty => _components.length == 0;
 
@@ -24,12 +25,12 @@ final class Stash<TComponent>{
     return _components[content.id]!;
   }
 
-  TComponent add(CmsContent content, TComponent component){
+  TComponent add(CmsContent content, TComponent value){
     // null-assertion operator is approved here, because of has() check.
     if(has(content)) return _components[content.id]!;
 
-    _components[content.id] = component;
-    return component;
+    _components[content.id] = value;
+    return value;
   }
 
   bool remove(CmsContent content){

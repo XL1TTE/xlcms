@@ -1,29 +1,32 @@
+
 import 'package:xlcms/src/cms_content.dart';
+import 'package:xlcms/src/contracts/component.dart';
 import 'package:xlcms/src/contracts/stash_manager.dart';
+import 'package:xlcms/src/contracts/stash_registry.dart';
+import 'package:xlcms/src/stash_registry.dart';
 
 final class StashManager implements IStashManager{
 
+  final IStashRegistry _stashRegistry = StashRegistry();
+
   @override
-  TComponent attach<TComponent>(CmsContent content) {
-    // TODO: implement attach
-    throw UnimplementedError();
+  TComponent attach<TComponent extends CmsComponent>(CmsContent content, TComponent value) {
+    return _stashRegistry.getStash<TComponent>().add(content, value);
   }
 
   @override
-  TComponent get<TComponent>(CmsContent content) {
-    // TODO: implement get
-    throw UnimplementedError();
+  bool detach<TComponent extends CmsComponent>(CmsContent content) {
+    return _stashRegistry.getStash<TComponent>().remove(content);
   }
 
   @override
-  bool has<TComponent>(CmsContent content) {
-    // TODO: implement has
-    throw UnimplementedError();
+  TComponent get<TComponent extends CmsComponent>(CmsContent content) {
+    return _stashRegistry.getStash<TComponent>().get(content);
   }
 
   @override
-  bool unattach<TComponent>(CmsContent content) {
-    // TODO: implement unattach
-    throw UnimplementedError();
+  bool has<TComponent extends CmsComponent>(CmsContent content) {
+    return _stashRegistry.getStash<TComponent>().has(content);
   }
+
 }

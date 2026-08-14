@@ -2,10 +2,7 @@ import 'package:test/test.dart';
 import 'package:xlcms/src/cms_content.dart';
 import 'package:xlcms/src/stash.dart';
 
-final class TestComponent{
-  const TestComponent({required this.value});
-  final int value;
-}
+import 'fixture/test_components.dart';
 
 void main() {
   group('Stash tests', () {

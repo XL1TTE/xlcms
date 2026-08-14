@@ -12,6 +12,7 @@ final class SmartBuffer<T> {
   
   int get length => _length;
   int get capacity => _buffer.length;
+  int get maxCapacity => _maxCapacity;
 
   void operator []=(int index, T value){
     if (index >= _buffer.length) {
