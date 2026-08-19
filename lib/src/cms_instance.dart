@@ -1,6 +1,7 @@
 import 'package:xlcms/src/cms_content.dart';
 import 'package:xlcms/src/cms_global_configuration.dart';
 import 'package:xlcms/src/content_manager.dart';
+import 'package:xlcms/src/contracts/cms_instance.dart';
 import 'package:xlcms/src/contracts/component.dart';
 import 'package:xlcms/src/contracts/component_registry.dart';
 import 'package:xlcms/src/contracts/content_manager.dart';
@@ -10,7 +11,6 @@ import 'package:xlcms/src/filtering/filter_builder.dart';
 import 'package:xlcms/src/filtering/filter_manager.dart';
 import 'package:xlcms/src/stash/stash_manager.dart';
 
-import 'contracts/cms_instance.dart';
 
 final class CmsInstance implements ICmsInstance{
 

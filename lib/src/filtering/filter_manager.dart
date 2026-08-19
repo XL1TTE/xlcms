@@ -5,9 +5,10 @@ import 'package:xlcms/src/cms_global_configuration.dart';
 import 'package:xlcms/src/contracts/component.dart';
 import 'package:xlcms/src/contracts/component_registry.dart';
 import 'package:xlcms/src/contracts/filter_manager.dart';
+import 'package:xlcms/src/filtering/filter.dart';
+import 'package:xlcms/src/filtering/filter_key.dart';
 import 'package:xlcms/src/structs/bit_mask.dart';
-import 'filter.dart';
-import 'filter_key.dart';
+
 
 final class FilterManager implements IFilterManager {
   final IComponentRegistry _registry;
