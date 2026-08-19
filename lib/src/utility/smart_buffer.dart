@@ -31,8 +31,8 @@ final class SmartBuffer<T> {
       throw RangeError.index(index, this);
     }
 
-    // index is always under buffer lenght here 
-    return _buffer[index]!;
+    // index is always under buffer lenght here
+    return _buffer[index] as T;
   }
 
   void _growToFit(int targetIndex) {

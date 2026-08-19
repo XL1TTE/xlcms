@@ -1,7 +1,7 @@
 import 'package:test/test.dart';
 import 'package:xlcms/src/contracts/stash_registry.dart';
-import 'package:xlcms/src/stash.dart';
-import 'package:xlcms/src/stash_registry.dart';
+import 'package:xlcms/src/stash/stash.dart';
+import 'package:xlcms/src/stash/stash_registry.dart';
 
 import 'fixture/test_components.dart';
 

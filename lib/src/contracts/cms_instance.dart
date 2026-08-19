@@ -1,5 +1,6 @@
 import 'package:xlcms/src/cms_content.dart';
 import 'package:xlcms/src/contracts/component.dart';
+import 'package:xlcms/src/filtering/filter_builder.dart';
 
 abstract interface class ICmsInstance {
 
@@ -11,4 +12,6 @@ abstract interface class ICmsInstance {
     bool       detachComponent<TComponent extends CmsComponent>(CmsContent content);
     TComponent getComponent<TComponent extends CmsComponent>(CmsContent content);
     bool       hasComponent<TComponent extends CmsComponent>(CmsContent content);
+
+    FilterBuilder filter();
 }

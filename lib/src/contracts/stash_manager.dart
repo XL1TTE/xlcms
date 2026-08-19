@@ -7,4 +7,5 @@ abstract interface class IStashManager {
   bool detach<TComponent extends CmsComponent>(CmsContent content);
   TComponent get<TComponent extends CmsComponent>(CmsContent content);
   bool has<TComponent extends CmsComponent>(CmsContent content);
+  void clear(CmsContent content);
 }

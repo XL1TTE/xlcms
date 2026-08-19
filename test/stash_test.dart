@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 import 'package:xlcms/src/cms_content.dart';
-import 'package:xlcms/src/stash.dart';
+import 'package:xlcms/src/stash/stash.dart';
 
 import 'fixture/test_components.dart';
 

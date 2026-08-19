@@ -30,7 +30,7 @@ final class ContentManager implements IContentManager{
   @override
   bool deleteContent(CmsContent content) {
 
-    if(exist(content) == false) {return false;}
+    if(exist(content) == false) {return true;}
 
     _generations[content.id]++;
     _freeIndexes.add(content.id);

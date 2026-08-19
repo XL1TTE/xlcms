@@ -3,7 +3,7 @@ import 'package:xlcms/src/cms_content.dart';
 import 'package:xlcms/src/contracts/component.dart';
 import 'package:xlcms/src/contracts/stash_manager.dart';
 import 'package:xlcms/src/contracts/stash_registry.dart';
-import 'package:xlcms/src/stash_registry.dart';
+import 'package:xlcms/src/stash/stash_registry.dart';
 
 final class StashManager implements IStashManager{
 
@@ -27,6 +27,13 @@ final class StashManager implements IStashManager{
   @override
   bool has<TComponent extends CmsComponent>(CmsContent content) {
     return _stashRegistry.getStash<TComponent>().has(content);
+  }
+
+  @override
+  void clear(CmsContent content) {
+    for(final stash in _stashRegistry.stashes){
+      stash.remove(content);
+    }
   }
 
 }
